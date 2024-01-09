@@ -44,9 +44,10 @@ const setupSaveEventListeners = () => {
     const saveBtns = $('.saveBtn');
   
     saveBtns.click((e) => {
-     
+      const input = $(e.target).siblings('.description'); // Find the corresponding input
+  
       // Save the input value to local storage
-      localStorage.setItem(`${input.parent().data('time')}`, input.val());
+      localStorage.setItem(`text-${input.parent().data('time')}`, input.val());
     });
   };
   
@@ -56,11 +57,10 @@ const setupSaveEventListeners = () => {
   
     timeBlocks.each(function () {
       const input = $(this).find('.description');
-       
-      // This code is saying get the localStorage item based on the key I gave above and store it in the storedvalue. This key will give the value thats stored inside this key. therefore stored value = input.val() technically.
-
-      // If the input contains text then give that input box the value sotred inside the storedValue variable on the page load.
-      const storedValue = localStorage.getItem(`${$(this).data('time')}`);
+      const key = `text-${$(this).data('time')}`;
+  
+      // Retrieve the value from local storage and set it to the input field
+      const storedValue = localStorage.getItem(key);
       if (storedValue !== null) {
         input.val(storedValue);
       }
