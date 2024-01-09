@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const Hour = dayjs().format('H');
-    
+    const container = $('.container');
 
     const time = () => {
         let currentDate = dayjs().format(`MMMM DD YYYY`);
@@ -43,9 +43,11 @@ $(document).ready(function () {
 const setupSaveEventListeners = () => {
     const saveBtns = $('.saveBtn');
   
-    saveBtns.click((e) => {
-      const input = $(e.target).siblings('.description'); // Find the corresponding input
-  
+  // Event delegation for saveBtn click event
+  container.on('click', '.saveBtn, .saveBtn i', function (e) {
+    const input = $(this).siblings('.description'); // Find the corresponding input
+
+    // Save the input value to local storage
       // Save the input value to local storage
       localStorage.setItem(`text-${input.parent().data('time')}`, input.val());
     });
