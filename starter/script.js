@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const Hour = dayjs().format('H');
-    input = $(this).find('.description');
+    
 
     const time = () => {
         let currentDate = dayjs().format(`MMMM DD YYYY`);
@@ -22,7 +22,7 @@ $(document).ready(function () {
           $('.time-block').each(function() {
             const plannerHour = parseInt($(this).data('time'));
       
-
+            const input = $(this).find('.description');
       
             input.toggleClass('past', plannerHour < Hour);
             input.toggleClass('present', plannerHour === Hour);

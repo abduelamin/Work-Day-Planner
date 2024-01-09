@@ -23,7 +23,7 @@ N/A
 
 This webpage is designed as an interactive work day planner to help you plan your day. You can access this planner that automatically refreshes every midnight, giving you a fresh start every morning [here](https://abduelamin.github.io/Work-Day-Planner/)
 
-
+![work day planner](https://github.com/abduelamin/Work-Day-Planner/assets/149680577/01b792e0-a4b5-4446-9a60-bc50a7ee7579)
 
 ## Contributing
 
